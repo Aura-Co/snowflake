@@ -1,13 +1,15 @@
 [package]
-name = "snowflake-multi-threaded"
+name = "snowflake"
 version = "0.1.3"
-authors = ["hans <hans@hansk.org>"]
-repository = "https://github.com/hanskorg/snowflake-rust.git"
-homepage = "https://github.com/hanskorg/snowflake-rust.git"
+authors = ["xugy <xugy@xugy.org>"]
+repository = "https://github.com/Aura-Co/snowflake.git"
+homepage = "https://github.com/Aura-Co/snowflake.git"
 license = "MIT"
 readme = "README.md"
-documentation = "https://github.com/hanskorg/snowflake-rust/blob/master/README.md"
+documentation = "https://github.com/Aura-Co/snowflake/blob/master/README.md"
 description = "The rust-lang implementation of Twitter's id generator algorithm snowflake, it thread safety | Twitter 的id生成器算法snowflake的rust-lang 实现"
+
 [dependencies]
 time = "0.1.39"
 #error-chain = "0.11.0"
+

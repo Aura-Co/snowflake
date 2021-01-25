@@ -1,6 +1,6 @@
-extern crate snowflake_multi_threaded;
+extern crate snowflake;
 
-use snowflake_multi_threaded::SnowFlakeId;
+use snowflake::SnowFlakeId;
 
 fn main() {
     let mut id_gen = SnowFlakeId::kubernetes(1);
