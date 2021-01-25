@@ -29,7 +29,11 @@ snowflake = { git = "https://github.com/Aura-Co/snowflake", branch = "master" }
 ```
 
 ## Benchmarks
-&nbsp;&nbsp;&nbsp;&nbsp;笔者 17款 4核 标压 macbook pro，以 lib 方式使用：500w/s。
+&nbsp;&nbsp;&nbsp;&nbsp;笔者 17款 4核 标压 macbook pro，以 lib 方式使用：
+
+- cargo run：500w/s。
+
+- release包：1.6kw/s。
 
 
 ## Other
