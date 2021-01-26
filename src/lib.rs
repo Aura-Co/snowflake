@@ -14,11 +14,11 @@
 //! # Examples
 //!
 //! ```
-//!use snowflake_multi_threaded::SnowFlakeId;
+//!use snowflake::SnowFlakeId;
 //!
-//! let worker_id:i64 = 1;
-//! let datacenter_id:i64 = 1;
-//! let mut id_gen = SnowFlakeId::new(worker_id,datacenter_id);
+//! let worker_id: i64 = 1;
+//! let datacenter_id: i64 = 1;
+//! let mut id_gen = SnowFlakeId::new(worker_id, datacenter_id);
 //! assert!(id_gen.generate_id().is_ok());
 //! ```
 //!
@@ -65,7 +65,7 @@ impl SnowFlakeId {
     /// # Examples
     ///
     /// ```
-    /// use snowflake_multi_threaded::SnowFlakeId;
+    /// use snowflake::SnowFlakeId;
     ///
     /// let var = SnowFlakeId::new(1,1);
     ///
@@ -83,9 +83,9 @@ impl SnowFlakeId {
     /// # Examples
     ///
     /// ```
-    /// use snowflake_multi_threaded::SnowFlakeId;
+    /// use snowflake::SnowFlakeId;
     ///
-    /// let var = SnowFlakeId::new(1,1).generate_id();
+    /// let var = SnowFlakeId::new(1, 1).generate_id();
     ///
     /// println!("the new id is {}", var.unwrap());
     /// ```
