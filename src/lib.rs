@@ -54,23 +54,9 @@ impl SnowFlakeId {
         let ip_split: Vec<&str> = ip.split(".").collect();
         let ip_low = ip_split[2].to_string().parse::<i64>().unwrap() << 8 | ip_split[3].to_string().parse::<i64>().unwrap();
         SnowFlakeId {
-            twepoch: 1514736000_000i64,
-
-            worker_id_bits: 5,
-            datacenter_id_bits: 5,
-            sequence_bits: 12,
-
             datacenter_id,
             worker_id: ip_low,
-            sequence: 0i64,
-
-            worker_id_shift: 12,
-            datacenter_id_shift: 17,
-            timestamp_left_shift: 22,
-
-            sequence_mask: -1i64 ^ (-1i64 << 12),
-
-            last_timestamp: Arc::new(Mutex::new(0)),
+            ..Default::default()
         }
     }
 
@@ -86,23 +72,9 @@ impl SnowFlakeId {
     /// ```
     pub fn new(worker_id: i64, datacenter_id: i64) -> SnowFlakeId {
         SnowFlakeId {
-            twepoch: 1514736000_000i64,
-
-            worker_id_bits: 5,
-            datacenter_id_bits: 5,
-            sequence_bits: 12,
-
             datacenter_id,
             worker_id,
-            sequence: 0i64,
-
-            worker_id_shift: 12,
-            datacenter_id_shift: 17,
-            timestamp_left_shift: 22,
-
-            sequence_mask: -1i64 ^ (-1i64 << 12),
-
-            last_timestamp: Arc::new(Mutex::new(0)),
+            ..Default::default()
         }
     }
 
@@ -153,6 +125,30 @@ impl SnowFlakeId {
     fn curr_time() -> i64 {
         let ctime = time::get_time();
         ctime.sec * 1000 + ctime.nsec as i64 / 1000_000
+    }
+}
+
+impl Default for SnowFlakeId {
+    fn default() -> Self {
+        SnowFlakeId {
+            twepoch: 1514736000_000i64,
+
+            worker_id_bits: 5,
+            datacenter_id_bits: 5,
+            sequence_bits: 12,
+
+            datacenter_id: 1,
+            worker_id: 1,
+            sequence: 0i64,
+
+            worker_id_shift: 12,
+            datacenter_id_shift: 17,
+            timestamp_left_shift: 22,
+
+            sequence_mask: -1i64 ^ (-1i64 << 12),
+
+            last_timestamp: Arc::new(Mutex::new(0)),
+        }
     }
 }
 
