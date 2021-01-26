@@ -9,7 +9,7 @@
 
 ```toml
 [dependencies]
-snowflake = { git = "https://github.com/Aura-Co/snowflake", branch = "master" }
+snowflake = { git = "https://github.com/Aura-Co/snowflake", tag = "0.1.4" }
 ```
 
 &nbsp;&nbsp;&nbsp;&nbsp;Kubernetes 中使用，会基于容器 ip 的最后两节，生成可用的 worker_id：：
