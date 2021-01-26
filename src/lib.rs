@@ -28,7 +28,7 @@ extern crate time;
 use std::net::UdpSocket;
 use std::sync::{Arc, Mutex};
 
-#[derive(Default, Debug)]
+#[derive(Debug)]
 pub struct SnowFlakeId {
     twepoch: i64,
 
