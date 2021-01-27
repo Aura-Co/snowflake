@@ -169,6 +169,12 @@ fn get_ip() -> Option<String> {
     };
 }
 
+// 临时方法，将很快被移除
+pub fn id() -> i64 {
+    let mut id_gen: SnowFlakeId = SnowFlakeId::kubernetes(1);
+    id_gen.generate_id().unwrap()
+}
+
 #[cfg(test)]
 mod test {
     use std::thread;
