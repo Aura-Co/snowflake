@@ -1,5 +1,5 @@
 [package]
-name = "snowflake"
+name = "snowflakex"
 version = "0.1.5"
 authors = ["xugy <xugy@xugy.org>"]
 repository = "https://github.com/Aura-Co/snowflake.git"
